@@ -5,14 +5,19 @@ import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./signup.css";
+import { useState } from "react";
+import { useContext } from "react";
+import { UserContext } from "../../context/UserContext";
 
 export const SignUpForm = () => {
+  const { setName } = useContext(UserContext);
+  const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
   const schema = yup.object().shape({
     fullName: yup.string().required("Full name is required"),
-    email: yup.string().email().required("Email is required"),
-    password: yup.string().min(4).required("Password is required"),
+    email: yup.string().email("invalid email").required("Email is required"),
+    password: yup.string().min(6).required("Password is required"),
   });
 
   const { register, handleSubmit } = useForm({
@@ -20,18 +25,23 @@ export const SignUpForm = () => {
   });
 
   const onsubmit = (data) => {
-    navigate("/dashboard", {
-      state: { fromSignup: true, fullName: data.fullName },
-    });
+    setName(data.fullName);
+    toast.success("Successfully logged in");
+    navigate("/dashboard");
+  };
+
+  const toggleVisibility = () => {
+    setIsVisible((prev) => !prev);
   };
 
   const onError = () => {
     toast.error("All fields are required");
   };
+
   return (
     <div className='SignUpForm'>
       <div className='sign-up-logo'>
-        <img src='/images/logo.png' alt='Logo' />
+        <img src='./src/assets/images/logo.svg' alt='Logo' />
       </div>
       <form onSubmit={handleSubmit(onsubmit, onError)} className='sign-up-form'>
         <h2 className='sign-up-heading'>Welcome!</h2>
@@ -63,20 +73,29 @@ export const SignUpForm = () => {
         <div className='form-group'>
           <p className='form-text-3'>Password</p>
           <br />
-          <input
-            type='password'
-            id='password'
-            name='password'
-            placeholder='Password'
-            {...register("password")}
-          />
+          <div className='form-password'>
+            <input
+              type={isVisible ? "text" : "password"}
+              id='password'
+              name='password'
+              placeholder='Password'
+              {...register("password")}
+            />
+            <span className='password-visible' onClick={toggleVisibility}>
+              {isVisible ? (
+                <i className='ri-eye-off-line'></i>
+              ) : (
+                <i className='ri-eye-line'></i>
+              )}
+            </span>
+          </div>
         </div>
         <button className='sign-up-btn' type='submit'>
           Proceed with verification
         </button>
         <p className='form-text-4'>
           Already have an account?{" "}
-          <Link to='/login' className='link'>
+          <Link to='/login' className='sign-in-link'>
             Sign in
           </Link>
         </p>

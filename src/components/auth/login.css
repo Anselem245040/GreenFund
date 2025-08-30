@@ -5,13 +5,18 @@
   min-height: 100vh;
   padding: 10px 15px;
   display: flex;
+  min-height: 100vh;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
+}
+
+.login-form .form-flex {
+  width: 80%;
 }
 
 .login-logo {
   padding-bottom: 10px;
+  text-align: center;
 }
 
 .login-form {
@@ -23,6 +28,7 @@
 }
 
 .login-text {
+  width: 100%;
   padding: 15px 0;
   color: #b6b4b4;
 }
@@ -46,7 +52,7 @@ input {
   width: 100%;
   padding: 15px 0;
   border-radius: 4px;
-  background-color: #d46a13;
+  background-color: orangered;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -62,14 +68,14 @@ input {
   text-align: center;
 }
 
-.form-text-4 .link {
+.form-text-4 .login-link {
   color: #d46a13;
   text-decoration: none;
   cursor: pointer;
   transition: color 300ms ease-in-out;
 }
 
-.form-text-4 link:hover {
+.form-text-4 .login-link:hover {
   color: #f58c36;
 }
 

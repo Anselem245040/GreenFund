@@ -1,0 +1,82 @@
+.insurance.blur {
+  background-color: #e7e4e4;
+}
+
+.insurance-products {
+  width: 100%;
+  overflow: hidden;
+}
+
+.insurance-card {
+  width: 80%;
+  border: 1px solid #ddd;
+  overflow: hidden;
+  border-radius: 12px;
+  background: white;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.insurance-card-img {
+  width: 90%;
+  height: 200px;
+  margin: 20px auto;
+}
+
+.insurance-card-img img {
+  display: block;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.insurance-card.blur {
+  background-color: #e7e4e4;
+  border: 1px solid white;
+}
+
+.insurance-card-details {
+  padding: 12px 18px;
+}
+
+.insurance-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+}
+
+.insurance-header h3 {
+  font-size: 18px;
+}
+
+.insurance-price {
+  color: #ff7300;
+  font-weight: bold;
+}
+
+.insurance-description {
+  color: #666;
+  font-size: 14px;
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
+.add-btn {
+  border: 2px solid #ff7300;
+  background: transparent;
+  color: #ff7300;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.insurance-rate {
+  display: inline-block;
+  color: #ff7300;
+  background: #f3b583;
+  border-radius: 4px;
+  padding: 4px 10px;
+  margin-bottom: 7px;
+}

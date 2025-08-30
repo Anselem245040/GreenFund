@@ -4,8 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --color-primary: ;
-  --color-primary: ;
-  --color-primary: ;
+html {
+  user-select: none;
 }
