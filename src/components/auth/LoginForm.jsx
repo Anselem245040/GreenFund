@@ -28,7 +28,7 @@ export const LoginForm = () => {
 
     if (isValid) {
       localStorage.setItem("loginSuccess", "true");
-      navigate("/dashboard");
+      navigate("/dashboard/home");
     }
   };
 

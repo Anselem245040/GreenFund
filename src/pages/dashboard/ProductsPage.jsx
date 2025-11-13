@@ -1,5 +1,10 @@
 import React from "react";
+import { Products } from "../../components/dashboard/Products";
 
 export const ProductsPage = () => {
-  return <div>ProductsPage</div>;
+  return (
+    <div>
+      <Products />
+    </div>
+  );
 };

@@ -6,20 +6,22 @@ export const Header = ({ toggleMenu, isMenuOpen }) => {
   const location = useLocation();
 
   const pageTitles = {
-    "/dashboard": "Overview",
-    "/insurance": "Insurance",
-    "/products": "Products",
-    "/payments": "Payments",
-    "/community": "Community",
-    "/settings": "Settings",
-    "/security": "Security",
-    "/userprofile": "Profile",
+    "/dashboard/home": "Overview",
+    "/dashboard/insurance": "Insurance",
+    "/dashboard/products": "Products",
+    "/dashboard/payments": "Payments",
+    "/dashboard/community": "Community",
+    "/dashboard/settings": "Settings",
+    "/dashboard/security": "Security",
+    "/dashboard/userprofile": "Profile",
   };
 
   return (
     <div className={`header ${isMenuOpen ? "blur" : ""}`}>
       <div className='header-text'>
-        <button onClick={toggleMenu}>Open</button>
+        <button onClick={toggleMenu}>
+          <i className='ri-menu-3-line'></i>
+        </button>
 
         <h2>{pageTitles[location.pathname]}</h2>
       </div>

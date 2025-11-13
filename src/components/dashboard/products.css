@@ -11,25 +11,20 @@
   --shadow-lg: 0 12px 30px rgba(15, 23, 42, 0.12);
 }
 
-.insurance {
+.product {
   min-height: 100vh;
   width: 100%;
   background: var(--bg);
 }
 
-.insurance-container {
-  margin: 0 auto;
+.product-container {
+  margin: 60px auto;
   max-width: 1200px;
   padding: 24px;
   box-sizing: border-box;
 }
 
-/* Page Header */
-.insurance-header-section {
-  margin: 70px auto 32px 0;
-}
-
-.insurance-page-title {
+.product-page-title {
   font-size: 2rem;
   font-weight: 700;
   color: #0f1724;
@@ -37,14 +32,14 @@
   letter-spacing: -0.5px;
 }
 
-.insurance-page-desc {
+.product-page-desc {
   font-size: 0.95rem;
   color: var(--muted);
   margin: 0;
 }
 
 /* Controls Section */
-.insurance-controls {
+.product-controls {
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -137,7 +132,7 @@
 }
 
 /* Products Grid */
-.insurance-products-grid {
+.products-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 20px;
@@ -145,7 +140,7 @@
 }
 
 /* Product Card */
-.insurance-product-card {
+.product-card {
   background: var(--card-bg);
   border-radius: var(--radius);
   overflow: hidden;
@@ -157,7 +152,7 @@
   height: 100%;
 }
 
-.insurance-product-card:hover {
+.product-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow-lg);
   border-color: var(--accent);
@@ -178,7 +173,7 @@
   transition: transform 0.3s ease;
 }
 
-.insurance-product-card:hover .product-image-wrapper img {
+.product-card:hover .product-image-wrapper img {
   transform: scale(1.05);
 }
 
@@ -274,10 +269,10 @@
 
 /* Responsive Design */
 @media (max-width: 980px) {
-  .insurance-header-section {
+  .product-header-section {
     margin: 60px auto 32px 0;
   }
-  .insurance-products-grid {
+  .product-products-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 16px;
   }
@@ -287,22 +282,22 @@
 }
 
 @media (max-width: 768px) {
-  .insurance-header-section {
+  .product-header-section {
     margin: 60px auto 15px 0;
   }
-  .insurance-container {
+  .product-container {
     padding: 16px;
   }
-  .insurance-page-title {
+  .product-page-title {
     font-size: 1.65rem;
   }
-  .insurance-controls {
+  .product-controls {
     gap: 12px;
   }
   .filters-group {
     grid-template-columns: 1fr;
   }
-  .insurance-products-grid {
+  .products-grid {
     grid-template-columns: 1fr;
     gap: 12px;
   }
@@ -315,13 +310,13 @@
 }
 
 @media (max-width: 640px) {
-  .insurance-header-section {
+  .product-header-section {
     margin: 60px auto 12px 0;
   }
-  .insurance-page-title {
+  .product-page-title {
     font-size: 1.5rem;
   }
-  .insurance-page-desc {
+  .product-page-desc {
     font-size: 0.9rem;
   }
   .search-input {

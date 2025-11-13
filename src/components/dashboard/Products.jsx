@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { Header } from "../common/Header";
 import { Sidebar } from "../common/Sidebar";
-import "./insurance.css";
+import "./products.css";
 import { fetchProducts } from "../api/productsApi";
 
-export const Insurance = ({ name }) => {
+export const Products = ({ name }) => {
   const [products, setProducts] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
@@ -46,24 +46,15 @@ export const Insurance = ({ name }) => {
       <Sidebar name={name} isMenuOpen={isMenuOpen} onClose={menuClose} />
       <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
 
-      <div className='insurance-container'>
-        <div className='insurance-header-section'>
-          <div>
-            <h1 className='insurance-page-title'>Farm Insurance Plans</h1>
-            <p className='insurance-page-desc'>
-              Browse and compare our best insurance options for your farm
-            </p>
-          </div>
-        </div>
-
+      <div className='product-container'>
         {/* Filters & Search */}
-        <div className='insurance-controls'>
+        <div className='product-controls'>
           {/* Search Input */}
           <div className='search-wrapper'>
             <i className='ri-search-line'></i>
             <input
               type='text'
-              placeholder='Search insurance products...'
+              placeholder='Search products...'
               className='search-input'
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
@@ -113,10 +104,10 @@ export const Insurance = ({ name }) => {
         </div>
 
         {/* Products Grid */}
-        <div className='insurance-products-grid'>
+        <div className='products-grid'>
           {searchItemAndSortItem.length > 0 ? (
             searchItemAndSortItem.map((product) => (
-              <div key={product.id} className='insurance-product-card'>
+              <div key={product.id} className='product-card'>
                 <div className='product-image-wrapper'>
                   <img src={product.image} alt={product.name} />
                   <div className='product-badge'>{product.rate}</div>

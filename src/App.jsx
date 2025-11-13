@@ -21,13 +21,13 @@ const App = () => {
             <Route path='/' element={<SignUp />} />
             <Route path='/login' element={<Login />} />
 
-            <Route path='/dashboard' element={<DashboardPage />} />
-            <Route path='/insurance' element={<InsurancePage />} />
-            <Route path='/products' element={<ProductsPage />} />
-            <Route path='/payments' element={<PaymentPage />} />
-            <Route path='/community' element={<Community />} />
-            <Route path='/settings' element={<Settings />} />
-            <Route path='/security' element={<Security />} />
+            <Route path='/dashboard/home' element={<DashboardPage />} />
+            <Route path='/dashboard/insurance' element={<InsurancePage />} />
+            <Route path='/dashboard/products' element={<ProductsPage />} />
+            <Route path='/dashboard/payments' element={<PaymentPage />} />
+            <Route path='/dashboard/community' element={<Community />} />
+            <Route path='/dashboard/settings' element={<Settings />} />
+            <Route path='/dashboard/security' element={<Security />} />
           </Routes>
           <ToastContainer
             position='top-right'

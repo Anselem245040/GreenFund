@@ -1,72 +1,47 @@
+import React from "react";
 import { Link } from "react-router-dom";
 import "./sidebar.css";
 
 export const Sidebar = ({ name, isMenuOpen, onClose }) => {
   return (
-    <div className={`sidebar ${isMenuOpen ? "active" : ""}`}>
-      <button className='btn-close' onClick={onClose}>
-        close
-      </button>
-      <div className='sidebar-header'>
-        <img src='./src/assets/images/logo.svg' loading='lazy' alt='logo' />
-      </div>
+    <>
+      {isMenuOpen && <div className='sidebar-overlay' onClick={onClose}></div>}
 
-      <div className='sidebar-profile'>
-        <img src={null} alt='profile' />
-        <h3>{name.split(" ")[0]}</h3>
+      <div className={`sidebar ${isMenuOpen ? "active" : ""}`}>
+        <div className='sidebar-header'>
+          <h2>🌱 GreenFund</h2>
+          <button className='btn-close' onClick={onClose}>
+            <i className='ri-close-line'></i>
+          </button>
+        </div>
 
-        <p>free plan</p>
+        <nav className='sidebar-nav'>
+          <ul>
+            <li>
+              <Link to='/dashboard/home' className='link' onClick={onClose}>
+                <i className='ri-dashboard-line'></i>
+                <span>Dashboard</span>
+              </Link>
+            </li>
+            <li>
+              <Link
+                to='/dashboard/insurance'
+                className='link'
+                onClick={onClose}
+              >
+                <i className='ri-briefcase-line'></i>
+                <span>Insurance</span>
+              </Link>
+            </li>
+            <li>
+              <Link to='/dashboard/products' className='link' onClick={onClose}>
+                <i className='ri-user-line'></i>
+                <span>Products</span>
+              </Link>
+            </li>
+          </ul>
+        </nav>
       </div>
-      <nav className='sidebar-nav'>
-        <ul>
-          <li>
-            <Link onClick={onClose} className='link' to='/dashboard'>
-              Dashboard
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/insurance'>
-              Insurance
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/products'>
-              Products
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/payments'>
-              Payments
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/community'>
-              Community
-            </Link>
-          </li>
-          <hr />
-          <li>
-            <Link onClick={onClose} className='link' to='/settings'>
-              Settings
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/security'>
-              Security
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/userprofile'>
-              Profile
-            </Link>
-          </li>
-          <li>
-            <Link onClick={onClose} className='link' to='/'>
-              Logout
-            </Link>
-          </li>
-        </ul>
-      </nav>
-    </div>
+    </>
   );
 };

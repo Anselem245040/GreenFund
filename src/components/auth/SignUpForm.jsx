@@ -6,11 +6,10 @@ import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "./signup.css";
 import { useState } from "react";
-import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { useUserContext } from "../hooks/useUserContext";
 
 export const SignUpForm = () => {
-  const { setName } = useContext(UserContext);
+  const { setName } = useUserContext();
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -27,7 +26,7 @@ export const SignUpForm = () => {
   const onsubmit = (data) => {
     setName(data.fullName);
     toast.success("Successfully logged in");
-    navigate("/dashboard");
+    navigate("/dashboard/home");
   };
 
   const toggleVisibility = () => {

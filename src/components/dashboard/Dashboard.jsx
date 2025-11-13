@@ -69,63 +69,68 @@ export const Dashboard = ({ name }) => {
   }, []);
 
   return (
-    <div>
-      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+    <div className='dashboard'>
       <Sidebar name={name} isMenuOpen={isMenuOpen} onClose={menuClose} />
 
-      <div className={`dashboard ${isMenuOpen ? "blur" : ""}`}>
-        <h2 className='dashboard-name'> Hi, {name}</h2>
-        <p className='welcome'>Hello, Welcome back!</p>
+      <Header isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
+
+      <div className={`container ${isMenuOpen ? "blur" : ""}`}>
+        <div className='dashboard-welcome'>
+          <div>
+            <h1 className='dashboard-greeting'>Hi, {name.split(" ")[0]} </h1>
+            <p className='dashboard-subtext'>
+              Welcome back! Here's your farm overview.
+            </p>
+          </div>
+        </div>
 
         <div className='card-container'>
           <div className='card insurance-dash-card'>
-            <p>Let's get started </p>
+            <div className='card-icon'>🛡️</div>
+            <p className='card-label'>Let's get started</p>
             <h3>Get the best insurance for your farm with us</h3>
             <button className='secure-btn'>Secure now</button>
           </div>
 
           <div className='card product-card'>
-            <p>Get the best product</p>
-            <h3>Purchase good quality farm product with quality pricing</h3>
+            <div className='card-icon'>📦</div>
+            <p className='card-label'>Get the best product</p>
+            <h3>Purchase quality farm products at great pricing</h3>
             <button className='buy-btn'>Buy now</button>
           </div>
         </div>
 
         <div className='recent'>
-          <div className='recent-flex'>
-            <div className='recent-heading'>
-              <h2>
-                Recent <br /> transactions
-              </h2>
-            </div>
-
-            <div className='see-more'>
-              <h4>
-                See more <br />
-                transaction
-              </h4>
-            </div>
+          <div className='recent-header'>
             <div>
-              see <br /> more
+              <h2 className='recent-title'>Recent Transactions</h2>
+              <p className='recent-desc'>Your latest farm activity</p>
             </div>
+            <a href='#' className='see-more-link'>
+              View all <i className='ri-arrow-right-line'></i>
+            </a>
           </div>
-          {transactionCard.map((transaction, index) => (
-            <div className='recent-cards' key={index}>
-              <div className='row'>
-                <span className='label'>Type:</span>
-                <span className='value'>
-                  {transaction.type}
-                  <br />
-                  <span className='date'>{transaction.date}</span>
-                </span>
-              </div>
-              <div className='row'>
-                <span className='label'>Amount:</span>
-                <span className='value'>${transaction.amount}</span>
-              </div>
-              <div className='row'>
-                <span className='label'>Status:</span>
-                <span className='value'>
+
+          <div className='transactions-list'>
+            {transactionCard.map((transaction, index) => (
+              <div className='recent-cards' key={index}>
+                <div className='transaction-header'>
+                  <div className='transaction-info'>
+                    <span className='transaction-type'>{transaction.type}</span>
+                    <span className='transaction-date'>{transaction.date}</span>
+                  </div>
+                  <div className='transaction-amount'>
+                    ${transaction.amount}
+                  </div>
+                </div>
+
+                <div className='transaction-footer'>
+                  <div className='transaction-method'>
+                    <span className='method-label'>{transaction.method}</span>
+                    <span className='card-last'>
+                      **** {transaction.cardNumber}
+                    </span>
+                  </div>
                   <span
                     className={`status ${
                       transaction.status === "Completed"
@@ -135,18 +140,10 @@ export const Dashboard = ({ name }) => {
                   >
                     {transaction.status}
                   </span>
-                </span>
+                </div>
               </div>
-              <div className='row'>
-                <span className='label'>Method:</span>
-                <span className='value'>
-                  {transaction.method} <br />
-                  **** {""}
-                  {transaction.cardNumber}
-                </span>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

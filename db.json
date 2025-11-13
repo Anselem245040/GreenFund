@@ -6,7 +6,7 @@
       "price": 4000,
       "description": "Dwarf pigs are small, hardy, disease-resistant, and well-suited to local climates and small farms.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/pig.jpg"
+      "image": "/pig.jpg"
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "price": 4000,
       "description": "Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/poultry-birds.jpg"
+      "image": "/poultry-birds.jpg"
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "price": 30000,
       "description": "Grass-fed cattle raised on open pastures ensure better health and superior meat quality.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/cattle.jpeg"
+      "image": "/cattle.jpeg"
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "price": 30000,
       "description": "African sheep are diverse, hardy breeds known for their resilience, adaptability, and valuable meat and wool.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/sheep.png"
+      "image": "/pig.jpg"
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "price": 70000,
       "description": "These cattles are hardy breeds kwown for disease resistance and adaptability to tropical climates.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/ndama-cattle.jpg"
+      "image": "/ndama-cattle.jpg"
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "price": 45000,
       "description": "Homemade milk from raw, organic almonds. Diary-free and perfect for smoothies, cereals and baking.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/nubian-goats.jpeg"
+      "image": "/nubian-goats.jpeg"
     },
     {
       "id": 7,
@@ -54,7 +54,7 @@
       "price": 40000,
       "description": "Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/fulani-Sahel-chicken.jpeg"
+      "image": "/Fulani-Sahel-chicken.jpeg"
     },
     {
       "id": 8,
@@ -62,7 +62,8 @@
       "price": 30000,
       "description": "Grass-fed cattle raised on open pastures ensure better health and superior meat quality.",
       "rate": "10% Insurance",
-      "image": "/src/assets/images/brown.jpg"
+      "image": "/brown.jpg"
     }
-  ]
+  ],
+  "cart": []
 }
