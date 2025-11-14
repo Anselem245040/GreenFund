@@ -2,14 +2,17 @@ import { useEffect, useState } from "react";
 import { Header } from "../common/Header";
 import { Sidebar } from "../common/Sidebar";
 import "./insurance.css";
+import "../common/modal.css";
 import { fetchProducts } from "../api/productsApi";
+import "../common/modal.css";
 
 export const Insurance = ({ name }) => {
   const [products, setProducts] = useState([]);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortType, setSortType] = useState("all");
-
+  const [showModal, setShowModal] = useState(false);
+  const [modalProduct, setModalProduct] = useState(null);
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
@@ -27,6 +30,16 @@ export const Insurance = ({ name }) => {
       if (sortType === "price") return a.price.localeCompare(b.price);
       return 0;
     });
+
+  const openModal = (product) => {
+    setModalProduct(product);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setModalProduct(null);
+  };
 
   useEffect(() => {
     const getProducts = async () => {
@@ -116,7 +129,11 @@ export const Insurance = ({ name }) => {
         <div className='insurance-products-grid'>
           {searchItemAndSortItem.length > 0 ? (
             searchItemAndSortItem.map((product) => (
-              <div key={product.id} className='insurance-product-card'>
+              <div
+                onClick={() => openModal(product)}
+                key={product.id}
+                className='insurance-product-card'
+              >
                 <div className='product-image-wrapper'>
                   <img src={product.image} alt={product.name} />
                   <div className='product-badge'>{product.rate}</div>
@@ -139,6 +156,42 @@ export const Insurance = ({ name }) => {
             </div>
           )}
         </div>
+
+        {showModal && modalProduct && (
+          <div className='modal-overlay' onClick={closeModal}>
+            <div
+              className='modal-container'
+              onClick={(e) => e.stopPropagation()}
+              role='dialog'
+              aria-modal='true'
+            >
+              <button
+                className='modal-close'
+                onClick={closeModal}
+                aria-label='Close'
+              >
+                <i className='ri-close-line'></i>
+              </button>
+
+              <div className='modal-content'>
+                <div className='modal-image'>
+                  <img src={modalProduct.image} alt={modalProduct.name} />
+                  <div className='modal-badge'>{modalProduct.rate}</div>
+                </div>
+
+                <div className='modal-body'>
+                  <h3 className='modal-title'>{modalProduct.name}</h3>
+                  <p className='modal-desc'>{modalProduct.description}</p>
+
+                  <div className='modal-footer'>
+                    <span className='modal-price'>${modalProduct.price}</span>
+                    <button className='add-to-cart-btn'>Add to Cart</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

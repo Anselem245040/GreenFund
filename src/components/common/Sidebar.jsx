@@ -9,7 +9,7 @@ export const Sidebar = ({ name, isMenuOpen, onClose }) => {
 
       <div className={`sidebar ${isMenuOpen ? "active" : ""}`}>
         <div className='sidebar-header'>
-          <h2>🌱 GreenFund</h2>
+          <h2>GreenFund</h2>
           <button className='btn-close' onClick={onClose}>
             <i className='ri-close-line'></i>
           </button>
