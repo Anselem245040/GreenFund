@@ -29,12 +29,17 @@
 }
 
 input {
-  padding: 15px 0;
+  padding: 12px 14px;
   width: 100%;
   border-radius: 3px;
   background-color: #333;
   border: 1px solid #525151;
   color: white;
+  box-sizing: border-box;
+}
+
+input::placeholder {
+  color: #999;
 }
 
 .form-text-2,
@@ -72,10 +77,6 @@ input {
 
 .form-text-4 .sign-in-link:hover {
   color: #f58c36;
-}
-
-input::placeholder {
-  padding-left: 4px;
 }
 
 .form-password {

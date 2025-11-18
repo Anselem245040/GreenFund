@@ -38,7 +38,7 @@ export const LoginForm = () => {
 
   return (
     <div className='login-form'>
-      <div className='form-flex'>
+      <div className='form-container'>
         <div className='login-logo'>
           <img src='./src/assets/images/logo.svg' alt='Logo' />
         </div>

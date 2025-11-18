@@ -1,6 +1,7 @@
 import React from "react";
 import "./header.css";
 import { useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const Header = ({ toggleMenu, isMenuOpen }) => {
   const location = useLocation();
@@ -26,7 +27,11 @@ export const Header = ({ toggleMenu, isMenuOpen }) => {
         <h2>{pageTitles[location.pathname]}</h2>
       </div>
 
-      <button>cart</button>
+      <button className='cart-btn'>
+        <Link to='/dashboard/cart'>
+          <i class='ri-shopping-cart-2-line'></i>
+        </Link>
+      </button>
     </div>
   );
 };

@@ -39,66 +39,71 @@ export const SignUpForm = () => {
 
   return (
     <div className='SignUpForm'>
-      <div className='sign-up-logo'>
-        <img src='./src/assets/images/logo.svg' alt='Logo' />
-      </div>
-      <form onSubmit={handleSubmit(onsubmit, onError)} className='sign-up-form'>
-        <h2 className='sign-up-heading'>Welcome!</h2>
-        <p className='sign-up-text'>
-          Your smart coverage for sustainable farming today
-        </p>
-        <div className='form-group'>
-          <p className='form-text-1'>Full Name</p>
-          <br />
-          <input
-            type='text'
-            id='full-name'
-            name='fullName'
-            placeholder='Name'
-            {...register("fullName")}
-          />
+      <div className='form-container'>
+        <div className='sign-up-logo'>
+          <img src='./src/assets/images/logo.svg' alt='Logo' />
         </div>
-        <div className='form-group'>
-          <p className='form-text-2'>Email Address</p>
-          <br />
-          <input
-            type='email'
-            id='email'
-            name='email'
-            placeholder='Email Address'
-            {...register("email")}
-          />
-        </div>
-        <div className='form-group'>
-          <p className='form-text-3'>Password</p>
-          <br />
-          <div className='form-password'>
+        <form
+          onSubmit={handleSubmit(onsubmit, onError)}
+          className='sign-up-form'
+        >
+          <h2 className='sign-up-heading'>Welcome!</h2>
+          <p className='sign-up-text'>
+            Your smart coverage for sustainable farming today
+          </p>
+          <div className='form-group'>
+            <p className='form-text-1'>Full Name</p>
+            <br />
             <input
-              type={isVisible ? "text" : "password"}
-              id='password'
-              name='password'
-              placeholder='Password'
-              {...register("password")}
+              type='text'
+              id='full-name'
+              name='fullName'
+              placeholder='Name'
+              {...register("fullName")}
             />
-            <span className='password-visible' onClick={toggleVisibility}>
-              {isVisible ? (
-                <i className='ri-eye-off-line'></i>
-              ) : (
-                <i className='ri-eye-line'></i>
-              )}
-            </span>
           </div>
-        </div>
-        <button className='sign-up-btn' type='submit'>
-          Proceed with verification
-        </button>
-        <p className='form-text-4'>
-          Already have an account?{" "}
-          <Link to='/login' className='sign-in-link'>
-            Sign in
-          </Link>
-        </p>
-      </form>
+          <div className='form-group'>
+            <p className='form-text-2'>Email Address</p>
+            <br />
+            <input
+              type='email'
+              id='email'
+              name='email'
+              placeholder='Email Address'
+              {...register("email")}
+            />
+          </div>
+          <div className='form-group'>
+            <p className='form-text-3'>Password</p>
+            <br />
+            <div className='form-password'>
+              <input
+                type={isVisible ? "text" : "password"}
+                id='password'
+                name='password'
+                placeholder='Password'
+                {...register("password")}
+              />
+              <span className='password-visible' onClick={toggleVisibility}>
+                {isVisible ? (
+                  <i className='ri-eye-off-line'></i>
+                ) : (
+                  <i className='ri-eye-line'></i>
+                )}
+              </span>
+            </div>
+          </div>
+          <button className='sign-up-btn' type='submit'>
+            Proceed with verification
+          </button>
+          <p className='form-text-4'>
+            Already have an account?{" "}
+            <Link to='/login' className='sign-in-link'>
+              Sign in
+            </Link>
+          </p>
+        </form>
+      </div>
     </div>
   );
 };

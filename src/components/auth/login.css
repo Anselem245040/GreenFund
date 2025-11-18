@@ -5,22 +5,19 @@
   min-height: 100vh;
   padding: 10px 15px;
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   justify-content: center;
   align-items: center;
 }
 
-.login-form .form-flex {
-  width: 80%;
+.form-container {
+  width: 400px;
 }
 
 .login-logo {
   padding-bottom: 10px;
   text-align: center;
-}
-
-.login-form {
-  padding: 15px 20px;
 }
 
 .login-heading {
@@ -34,12 +31,13 @@
 }
 
 input {
-  padding: 15px 0;
+  padding: 12px 14px;
   width: 100%;
   border-radius: 3px;
   background-color: #333;
   border: 1px solid #525151;
   color: white;
+  box-sizing: border-box;
 }
 
 .form-text-2,
@@ -80,5 +78,5 @@ input {
 }
 
 input::placeholder {
-  padding-left: 4px;
+  color: #999;
 }
