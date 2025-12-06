@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Dwarf Pig",
       "price": 4000,
       "description": "Dwarf pigs are small, hardy, disease-resistant, and well-suited to local climates and small farms.",
@@ -9,7 +9,7 @@
       "image": "/pig.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "name": "Chickens",
       "price": 4000,
       "description": "Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.",
@@ -17,7 +17,7 @@
       "image": "/poultry-birds.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "name": "Cattle",
       "price": 30000,
       "description": "Grass-fed cattle raised on open pastures ensure better health and superior meat quality.",
@@ -25,7 +25,7 @@
       "image": "/cattle.jpeg"
     },
     {
-      "id": 4,
+      "id": "4",
       "name": "Sheeps",
       "price": 30000,
       "description": "African sheep are diverse, hardy breeds known for their resilience, adaptability, and valuable meat and wool.",
@@ -33,7 +33,7 @@
       "image": "/pig.jpg"
     },
     {
-      "id": 5,
+      "id": "5",
       "name": "Ndama Cattle",
       "price": 70000,
       "description": "These cattles are hardy breeds kwown for disease resistance and adaptability to tropical climates.",
@@ -41,7 +41,7 @@
       "image": "/ndama-cattle.jpg"
     },
     {
-      "id": 6,
+      "id": "6",
       "name": "Nubian Goats",
       "price": 45000,
       "description": "Homemade milk from raw, organic almonds. Diary-free and perfect for smoothies, cereals and baking.",
@@ -49,7 +49,7 @@
       "image": "/nubian-goats.jpeg"
     },
     {
-      "id": 7,
+      "id": "7",
       "name": "Sahel Chicken",
       "price": 40000,
       "description": "Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.",
@@ -57,7 +57,7 @@
       "image": "/Fulani-Sahel-chicken.jpeg"
     },
     {
-      "id": 8,
+      "id": "8",
       "name": "Brown Cattles",
       "price": 30000,
       "description": "Grass-fed cattle raised on open pastures ensure better health and superior meat quality.",
@@ -65,5 +65,22 @@
       "image": "/brown.jpg"
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "4f6d",
+      "productId": "2",
+      "name": "Chickens",
+      "price": 4000,
+      "description": "Sahel chickens are hardy, adaptable, and primarily raised for meat and egg production in Nigeria.",
+      "quantity": 1
+    },
+    {
+      "id": "65a8",
+      "productId": "1",
+      "name": "Dwarf Pig",
+      "price": 4000,
+      "description": "Dwarf pigs are small, hardy, disease-resistant, and well-suited to local climates and small farms.",
+      "quantity": 1
+    }
+  ]
 }

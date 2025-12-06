@@ -10,6 +10,7 @@ import { useUserContext } from "../hooks/useUserContext";
 
 export const SignUpForm = () => {
   const { setName } = useUserContext();
+  const { setEmail } = useUserContext();
   const [isVisible, setIsVisible] = useState(false);
   const navigate = useNavigate();
 
@@ -25,6 +26,8 @@ export const SignUpForm = () => {
 
   const onsubmit = (data) => {
     setName(data.fullName);
+    setEmail(data.email);
+    localStorage.setItem("user", data.email);
     toast.success("Successfully logged in");
     navigate("/dashboard/home");
   };

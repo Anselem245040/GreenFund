@@ -4,7 +4,6 @@ import { Sidebar } from "../common/Sidebar";
 import "./insurance.css";
 import "../common/modal.css";
 import { fetchProducts } from "../api/productsApi";
-import "../common/modal.css";
 
 export const Insurance = ({ name }) => {
   const [products, setProducts] = useState([]);
@@ -31,16 +30,6 @@ export const Insurance = ({ name }) => {
       return 0;
     });
 
-  const openModal = (product) => {
-    setModalProduct(product);
-    setShowModal(true);
-  };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setModalProduct(null);
-  };
-
   useEffect(() => {
     const getProducts = async () => {
       try {
@@ -53,6 +42,16 @@ export const Insurance = ({ name }) => {
 
     getProducts();
   }, []);
+
+  const openModal = (product) => {
+    setModalProduct(product);
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+    setModalProduct(null);
+  };
 
   return (
     <div className={`product ${isMenuOpen ? "blur" : ""}`}>

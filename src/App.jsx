@@ -8,34 +8,39 @@ import { PaymentPage } from "./pages/dashboard/PaymentPage";
 import { Community } from "./pages/dashboard/Community";
 import { Security } from "./pages/dashboard/Security";
 import { Settings } from "./pages/dashboard/Settings";
+import Cart from "./components/cart/Cart";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { UserProvider } from "./context/UserContext";
+import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   return (
     <div>
-      <UserProvider>
-        <Router>
-          <Routes>
-            <Route path='/' element={<SignUp />} />
-            <Route path='/login' element={<Login />} />
+      <CartProvider>
+        <UserProvider>
+          <Router>
+            <Routes>
+              <Route path='/' element={<SignUp />} />
+              <Route path='/login' element={<Login />} />
 
-            <Route path='/dashboard/home' element={<DashboardPage />} />
-            <Route path='/dashboard/insurance' element={<InsurancePage />} />
-            <Route path='/dashboard/products' element={<ProductsPage />} />
-            <Route path='/dashboard/payments' element={<PaymentPage />} />
-            <Route path='/dashboard/community' element={<Community />} />
-            <Route path='/dashboard/settings' element={<Settings />} />
-            <Route path='/dashboard/security' element={<Security />} />
-          </Routes>
-          <ToastContainer
-            position='top-right'
-            autoClose={3000}
-            theme='colored'
-          />
-        </Router>
-      </UserProvider>
+              <Route path='/dashboard/home' element={<DashboardPage />} />
+              <Route path='/dashboard/insurance' element={<InsurancePage />} />
+              <Route path='/dashboard/products' element={<ProductsPage />} />
+              <Route path='/dashboard/payments' element={<PaymentPage />} />
+              <Route path='/dashboard/community' element={<Community />} />
+              <Route path='/dashboard/settings' element={<Settings />} />
+              <Route path='/dashboard/security' element={<Security />} />
+              <Route path='/dashboard/cart' element={<Cart />} />
+            </Routes>
+            <ToastContainer
+              position='top-right'
+              autoClose={3000}
+              theme='colored'
+            />
+          </Router>
+        </UserProvider>
+      </CartProvider>
     </div>
   );
 };

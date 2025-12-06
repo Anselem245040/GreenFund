@@ -15,6 +15,7 @@ export const Header = ({ toggleMenu, isMenuOpen }) => {
     "/dashboard/settings": "Settings",
     "/dashboard/security": "Security",
     "/dashboard/userprofile": "Profile",
+    "/dashboard/cart": "Cart",
   };
 
   return (

@@ -3,6 +3,8 @@ import { Header } from "../common/Header";
 import { Sidebar } from "../common/Sidebar";
 import "./products.css";
 import { fetchProducts } from "../api/productsApi";
+import { useCartContext } from "../hooks/useCartContext";
+import { use } from "react";
 
 export const Products = ({ name }) => {
   const [products, setProducts] = useState([]);
@@ -11,6 +13,8 @@ export const Products = ({ name }) => {
   const [sortType, setSortType] = useState("all");
   const [showModal, setShowModal] = useState(false);
   const [modalProduct, setModalProduct] = useState(null);
+
+  const { addToCart } = useCartContext();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
@@ -137,7 +141,12 @@ export const Products = ({ name }) => {
 
                   <div className='product-footer'>
                     <span className='product-price'>${product.price}</span>
-                    <button className='add-to-cart-btn'>Add to Cart</button>
+                    <button
+                      className='add-to-cart-btn'
+                      onClick={() => addToCart(product)}
+                    >
+                      Add to Cart
+                    </button>
                   </div>
                 </div>
               </div>
@@ -148,7 +157,6 @@ export const Products = ({ name }) => {
             </div>
           )}
         </div>
-
         {showModal && modalProduct && (
           <div className='modal-overlay' onClick={closeModal}>
             <div
